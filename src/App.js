@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import FadeIn from "react-fade-in";
+import "./App.css";
+import {useState} from "react"
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import {get_alts} from "./Generator"
+
+
 
 function App() {
+  const [password, setPassword] = useState("");
+  const [options, setOptions] = useState([]);
+
+  const handleChange = (password) => {
+    setPassword(password)
+    setOptions(get_alts(password,4))
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FadeIn>
+        <h1>We make your passwords secure.</h1>
+        <h2>While keeping them easy to remember.</h2>
+        <input
+          type="text"
+          id="password"
+          name="password"
+          placeholder="Type Password"
+          onChange={(e) => handleChange(e.target.value)}
+        />
+        {options.map((option) => (
+          <Option option={option}/>
+        ))}
+      </FadeIn>
+
+    </div>
+  );
+}
+
+function Option(props) {
+  return (
+    <div class="option">
+      <CopyToClipboard text={props.option}
+          onCopy={() => this.setState({copied: true})}>
+          <h3>{props.option}</h3>
+        </CopyToClipboard>
     </div>
   );
 }
