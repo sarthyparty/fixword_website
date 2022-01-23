@@ -3,7 +3,7 @@ import FadeIn from "react-fade-in";
 import "./App.css";
 import {useState} from "react"
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {get_alts} from "./Generator"
+import {get_alts} from "./fixword"
 
 
 
@@ -14,13 +14,14 @@ function App() {
   const handleChange = (password) => {
     setPassword(password)
     setOptions(get_alts(password,4))
+    console.log(get_alts)
   }
 
 
   return (
     <div className="App">
       <FadeIn>
-        <h1>We make your passwords secure.</h1>
+        <h1>Make your passwords secure.</h1>
         <h2>While keeping them easy to remember.</h2>
         <input
           type="text"
