@@ -1,5 +1,5 @@
 function get_unique_nums(count, range) {
-  const numbers = Array(range).fill().map((_, index) => index + 1);
+  const numbers = Array(range).fill().map((_, index) => index);
   numbers.sort(() => Math.random() - 0.5);
   return numbers.slice(0, count);
 }
@@ -78,7 +78,7 @@ function swap_letters(pass, change) {
     }
   }
   let num_of_changes = Math.round(change * letters.length)
-  let indices = get_unique_nums(num_of_changes, letters.length)
+  let indices = get_unique_nums(num_of_changes, letters.length-1)
   for (let i = 0; i < num_of_changes; i++) {
 
     let index_to_swap = letters[indices[i]];
