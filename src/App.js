@@ -7,6 +7,7 @@ import Extension from "./Extension";
 import Home from "./Home";
 
 function App() {
+  document.title = "FixWord";
   return (
     <div className="App">
       <Router>
