@@ -68,7 +68,7 @@ function is_letter(letter) {
   }
 }
 
-function swap_letters(pass) {
+function swap_letters(pass, change) {
   pass = pass.toLowerCase();
   let new_pass = pass.split("")
   let letters = []
@@ -77,7 +77,6 @@ function swap_letters(pass) {
       letters.push(i)
     }
   }
-  let change = 0.25
   let num_of_changes = Math.round(change * letters.length)
   let indices = get_unique_nums(num_of_changes, letters.length)
   for (let i = 0; i < num_of_changes; i++) {
@@ -147,17 +146,17 @@ function capitalize(pass) {
   return new_pass.join("")
 }
 
-function get_alt(pass) {
+function get_alt(pass, percent) {
   if (pass == "") {
     return "";
   }
-  let new_pass = capitalize(lengthen(swap_letters(pass)));
+  let new_pass = capitalize(lengthen(swap_letters(pass, percent)));
   return new_pass
 }
-export function get_alts(pass, num) {
+export function get_alts(pass, num, percent) {
   let alts = []
   for (let i = 0; i < num; i++) {
-    let new_pass=get_alt(pass)
+    let new_pass=get_alt(pass, percent)
     let alt=new_pass
     alts.push(alt)
   }

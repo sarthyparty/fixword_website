@@ -13,13 +13,20 @@ h1 {
 
 h2 {
   font-size: large;
-  padding-bottom: 5%;
   color: #B4869F
+}
+
+.headline h2 {
+  padding-bottom: 5%;
 }
 
 h3 {
   color: #F7F7F7;
   font-size: x-large;
+}
+
+.swap-options {
+  float: inline;
 }
 
 .option {
@@ -58,3 +65,5 @@ a {
 .links {
   padding-top: 2%;
 }
+
+
