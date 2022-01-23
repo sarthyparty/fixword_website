@@ -47,3 +47,14 @@ input {
 ::placeholder {
   color: black;
 }
+
+a {
+  padding: 2%;
+  margin-top: 5%;
+  color: #F7F7F7;
+  font-size: larger;
+}
+
+.links {
+  padding-top: 2%;
+}

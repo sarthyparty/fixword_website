@@ -1,52 +1,22 @@
-import logo from "./logo.svg";
-import FadeIn from "react-fade-in";
-import "./App.css";
-import {useState} from "react"
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {get_alts} from "./fixword"
-
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import Extension from "./Extension";
+import Home from "./Home";
 
 function App() {
-  const [password, setPassword] = useState("");
-  const [options, setOptions] = useState([]);
-
-  const handleChange = (password) => {
-    setPassword(password)
-    setOptions(get_alts(password,4))
-    console.log(get_alts)
-  }
-
-
   return (
     <div className="App">
-      <FadeIn>
-        <h1>Make your passwords secure.</h1>
-        <h2>While keeping them easy to remember.</h2>
-        <input
-          type="text"
-          id="password"
-          name="password"
-          placeholder="Type Password"
-          autocomplete="off"
-          onChange={(e) => handleChange(e.target.value)}
-        />
-        {options.map((option) => (
-          <Option option={option}/>
-        ))}
-      </FadeIn>
-
-    </div>
-  );
-}
-
-function Option(props) {
-  return (
-    <div class="option">
-      <CopyToClipboard text={props.option}
-          onCopy={() => this.setState({copied: true})}>
-          <h3>{props.option}</h3>
-        </CopyToClipboard>
+      <Router>
+        <div className="content">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="ext" element={<Extension />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 }
