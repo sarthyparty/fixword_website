@@ -28,6 +28,7 @@ function App() {
           id="password"
           name="password"
           placeholder="Type Password"
+          autocomplete="off"
           onChange={(e) => handleChange(e.target.value)}
         />
         {options.map((option) => (
