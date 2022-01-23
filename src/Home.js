@@ -4,6 +4,12 @@ import FadeIn from "react-fade-in";
 function Home() {
   return (
     <div class="Home">
+      <FadeIn>
+        <h1>Make your passwords secure.</h1>
+        <div class="headline">
+          <h2>While keeping them easy to remember.</h2>
+        </div>
+      </FadeIn>
       <Extension />
       <FadeIn>
         <div class="links">

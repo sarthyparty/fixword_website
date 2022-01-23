@@ -23,7 +23,6 @@ function Extension() {
 
   const handleDrag = (percent) => {
     setPercent(percent);
-    console.log(percent)
     setOptions(get_alts(password, 4, percent/100));
   };
 
