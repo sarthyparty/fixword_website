@@ -2,6 +2,6 @@
 
 [Node Package](https://github.com/sarthyparty/fixword) ```npm install fixword```
 
-[Chrome Extension] (https://github.com/sarthyparty/fixword_ext)
+[Chrome Extension](https://github.com/sarthyparty/fixword_ext)
 
 
