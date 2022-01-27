@@ -29,7 +29,7 @@ function Extension() {
   return (
     <div className="ext">
       <FadeIn>
-        <h1>Make your passwords secure.</h1>
+        <h1>Generate unique usernames.</h1>
         <div class="headline">
           <h2>While keeping them easy to remember.</h2>
         </div>
@@ -37,7 +37,7 @@ function Extension() {
           type="text"
           id="password"
           name="password"
-          placeholder="Type Password"
+          placeholder="Type here..."
           autocomplete="off"
           onChange={(e) => handleChange(e.target.value)}
         />
